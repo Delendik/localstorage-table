@@ -1,0 +1,27 @@
+.cell{
+  width:150px;
+  height:50px;
+  background-color:lightblue;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.cell__button:hover{
+  cursor: pointer;
+}
+
+@media (max-width:650px) {
+  .cell{
+    width: 100px;
+  }
+}
+
+@media (max-width:450px) {
+  .cell{
+    width: 70px;
+  }
+}

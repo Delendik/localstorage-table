@@ -1,0 +1,37 @@
+.add-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+.add-row__title{
+  display: flex;
+}
+
+.add-row__cell{
+  width: 200px;
+  border: 1px solid lightblue;
+  padding: 0;
+  margin: 0;
+}
+
+.add-row__button{
+  margin-top: 5px;
+}
+
+.add-row__button:hover{
+  cursor: pointer;
+}
+
+@media (max-width:650px) {
+  .add-row__cell{
+    width: 100px;
+  }
+}
+
+@media (max-width:450px) {
+  .add-row__cell{
+    width: 70px;
+  }
+}
