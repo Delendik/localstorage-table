@@ -14,7 +14,8 @@ function NewRow({id, name, type, color}) {
   }
 
   if(color[0]!=="#"){
-    newColor = rgbToHex (255, 0, 255);
+    color = color.slice(4, -1).split(",")
+    newColor = rgbToHex (Number(color[0]), Number(color[1]), Number(color[2]))
   }else{
     newColor = color;
   }

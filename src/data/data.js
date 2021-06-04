@@ -21,7 +21,7 @@ const data = [
     id: "4",
     name: "name4",
     type: "type4",
-    color: "rgb(255, 0, 255)",
+    color: "rgb(155, 100, 235)",
   },
   {
     id: "5",
