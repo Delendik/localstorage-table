@@ -11,14 +11,13 @@ function AddRow() {
     var random;
     do {
         random = Math.floor(Math.random() * 1000);
-        console.log(arr.includes(random))
     } while (arr.includes(random.toString()))
     return random;
   }
   function handleClick() {
     setShow(!show);
     if(show){
-      let id = findID(Object.keys(localStorage))
+      let id = findID(Object.keys(localStorage));
       let row = {};
       row.id = id;
       row.name = currentName;

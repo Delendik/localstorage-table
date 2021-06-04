@@ -2,9 +2,26 @@ import '../blocks/NewRow.css';
 import { useState } from 'react';
 
 function NewRow({id, name, type, color}) {
+  let newColor = "";
+  function rgbToHex (r, g, b){ 
+    r = r.toString(16);
+    g = g.toString(16);
+    b = b.toString(16);
+    if (r.length === 1) r = '0' + r;
+    if (g.length === 1) g = '0' + g;
+    if (b.length === 1) b = '0' + b;
+    return "#"+(r + g + b).toUpperCase();
+  }
+
+  if(color[0]!=="#"){
+    newColor = rgbToHex (255, 0, 255);
+  }else{
+    newColor = color;
+  }
+
   const [currentName, setCurrentName] = useState(name);
   const [currentType, setCurrentType] = useState(type);
-  const [currentColor, setCurrentColor] = useState(color);
+  const [currentColor, setCurrentColor] = useState(newColor);
 
   function changeName(e) {
     setCurrentName(e.target.value);
@@ -15,7 +32,7 @@ function NewRow({id, name, type, color}) {
       window.localStorage.setItem(id, JSON.stringify(row));
     } 
   }
-
+  
   function changeType(e) {
     setCurrentType(e.target.value);
     let data = localStorage.getItem(id)

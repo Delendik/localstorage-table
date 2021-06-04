@@ -1,45 +1,55 @@
-import { useState, useEffect } from 'react';
 import '../blocks/Table.css';
 import NewRow from './NewRow';
+import { useState } from 'react';
 
-function Table({active, currentPage, openRow}) {
-  // const [data, setData] = useState([]);
-  // const [field, setField] = useState('')
-  // const [toggleSort, setToggleSort] = useState(true);
-
-  // function sortByField(field) {
-  //   if(toggleSort){
-  //     return (a, b) => a[field] > b[field] ? 1 : -1;
-  //   }
-  //   return (a, b) => a[field] > b[field] ? -1 : 1;
-  // };
+function Table() {
+  const [field, setField] = useState('')
+  const [toggleSort, setToggleSort] = useState(true);
 
   var data = [];
-  // useEffect(()=>{
-  //   for(let i=0; i<localStorage.length; i++) {
-  //     let key = localStorage.key(i);
-  //     data.push(JSON.parse(localStorage.getItem(key)));
-  //   }
-  // }, [])
-  // console.log(data)
   for(let i=0; i<localStorage.length; i++) {
     let key = localStorage.key(i);
     data.push(JSON.parse(localStorage.getItem(key)));
   }
 
+  const handleClickName = () => {
+    setField('name');
+    setToggleSort(!toggleSort)
+  };
+
+  const handleClickType = () => {
+    setField('type');
+    setToggleSort(!toggleSort)
+  };
+
+  const handleClickColor = () => {
+    setField('color');
+    setToggleSort(!toggleSort)
+  };
+
+  function sortByField(field) {
+    if(toggleSort){
+      return (a, b) => a[field] > b[field] ? 1 : -1;
+    }
+    return (a, b) => a[field] > b[field] ? -1 : 1;
+  };
+
+  data.sort(sortByField(field));
+  let dataForDisplay=data.reverse();
+
   return(
     <table className="table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Color</th>
+          <th>Name<button className="table__sort-button" onClick={handleClickName}>sort</button></th>
+          <th>Type<button className="table__sort-button" onClick={handleClickType}>sort</button></th>
+          <th>Color<button className="table__sort-button" onClick={handleClickColor}>sort</button></th>
           <th>Delete Button</th>
         </tr>
       </thead>
       <tbody>
         {
-          data.map(data=><NewRow key={`${data.id}`} {...data} />)
+          dataForDisplay.map(data=><NewRow key={`${data.id}`} {...data} />)
         }
       </tbody>
     </table>
