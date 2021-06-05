@@ -3,6 +3,7 @@
   height:50px;
   background-color:lightblue;
   outline: none;
+  padding: 0;
   border: none;
   display: flex;
   align-items: center;
@@ -12,6 +13,12 @@
 
 .cell__button:hover{
   cursor: pointer;
+}
+
+.cell__container{
+  cursor: -webkit-grab;
+  cursor: grab;
+  background-color:lightblue;
 }
 
 @media (max-width:650px) {

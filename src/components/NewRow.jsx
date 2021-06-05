@@ -1,7 +1,7 @@
 import '../blocks/NewRow.css';
 import { useState } from 'react';
 
-function NewRow({id, name, type, color}) {
+function NewRow({id, name, type, color, draggable, onDragStart, onDragLeave, onDragOver, onDrop}) {
   let newColor = "";
   function rgbToHex (r, g, b){ 
     r = r.toString(16);
@@ -36,7 +36,7 @@ function NewRow({id, name, type, color}) {
   
   function changeType(e) {
     setCurrentType(e.target.value);
-    let data = localStorage.getItem(id)
+    let data = localStorage.getItem(id);
     if (data != null) {
       let row= JSON.parse(data);
       row.type = e.target.value;
@@ -46,7 +46,7 @@ function NewRow({id, name, type, color}) {
 
   function changeColor(e) {
     setCurrentColor(e.target.value);
-    let data = localStorage.getItem(id)
+    let data = localStorage.getItem(id);
     if (data != null) {
       let row= JSON.parse(data);
       row.color = e.target.value;
@@ -60,11 +60,19 @@ function NewRow({id, name, type, color}) {
   }
   
   return(
-    <tr>
+    <tr 
+      className="cell__container" 
+      draggable={draggable}
+      onDragStart={onDragStart}
+      onDragLeave={onDragLeave}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+    >
       <td><input className="cell" type="text" onChange={changeName} value={currentName}></input></td>
       <td><input className="cell" type="text" onChange={changeType} value={currentType}></input></td>
       <td><input className="cell" type="color" onChange={changeColor} value={currentColor}></input></td>
-      <td className="cell"><button className="cell__button" onClick={deleteRow}>Delete</button></td>
+      <td ><button className="cell cell__button" onClick={deleteRow}>Delete</button></td>
+      <td><p className="cell">Change my position</p></td>
     </tr>
   )
   
