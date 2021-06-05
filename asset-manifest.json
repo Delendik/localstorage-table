@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/localstorage-table/static/css/main.df1333ca.chunk.css",
-    "main.js": "/localstorage-table/static/js/main.fcad5cf0.chunk.js",
-    "main.js.map": "/localstorage-table/static/js/main.fcad5cf0.chunk.js.map",
+    "main.css": "/localstorage-table/static/css/main.db013f97.chunk.css",
+    "main.js": "/localstorage-table/static/js/main.910afa82.chunk.js",
+    "main.js.map": "/localstorage-table/static/js/main.910afa82.chunk.js.map",
     "runtime-main.js": "/localstorage-table/static/js/runtime-main.adf43222.js",
     "runtime-main.js.map": "/localstorage-table/static/js/runtime-main.adf43222.js.map",
-    "static/js/2.6b75cdec.chunk.js": "/localstorage-table/static/js/2.6b75cdec.chunk.js",
-    "static/js/2.6b75cdec.chunk.js.map": "/localstorage-table/static/js/2.6b75cdec.chunk.js.map",
+    "static/js/2.32e79718.chunk.js": "/localstorage-table/static/js/2.32e79718.chunk.js",
+    "static/js/2.32e79718.chunk.js.map": "/localstorage-table/static/js/2.32e79718.chunk.js.map",
     "index.html": "/localstorage-table/index.html",
-    "static/css/main.df1333ca.chunk.css.map": "/localstorage-table/static/css/main.df1333ca.chunk.css.map",
-    "static/js/2.6b75cdec.chunk.js.LICENSE.txt": "/localstorage-table/static/js/2.6b75cdec.chunk.js.LICENSE.txt"
+    "static/css/main.db013f97.chunk.css.map": "/localstorage-table/static/css/main.db013f97.chunk.css.map",
+    "static/js/2.32e79718.chunk.js.LICENSE.txt": "/localstorage-table/static/js/2.32e79718.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.adf43222.js",
-    "static/js/2.6b75cdec.chunk.js",
-    "static/css/main.df1333ca.chunk.css",
-    "static/js/main.fcad5cf0.chunk.js"
+    "static/js/2.32e79718.chunk.js",
+    "static/css/main.db013f97.chunk.css",
+    "static/js/main.910afa82.chunk.js"
   ]
 }
