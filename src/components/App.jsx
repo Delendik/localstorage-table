@@ -4,9 +4,9 @@ import Table from './Table';
 import AddRow from './AddRow';
 
 function App() {
-  let chackData = localStorage.getItem(data[0].id);
+  let chackData = localStorage.length;
   
-  if (chackData === null) {
+  if (chackData === 0) {
     data.forEach(item=> localStorage.setItem(item.id, JSON.stringify(item)));
   };
 
