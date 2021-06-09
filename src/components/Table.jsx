@@ -65,33 +65,50 @@ function Table() {
     }
   }
 
-  return(
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Name<button className="table__sort-button" onClick={handleClickName}>sort</button></th>
-          <th>Type<button className="table__sort-button" onClick={handleClickType}>sort</button></th>
-          <th>Color<button className="table__sort-button" onClick={handleClickColor}>sort</button></th>
-          <th>Delete Button</th>
-          <th>Change position</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          dataForDisplay.map(data=>
-            <NewRow 
-              key={`${data.id}`} 
-              {...data} 
-              draggable={true}
-              onDragStart={(e)=> dragStartHandler(e, data)}
-              onDragLeave={(e)=> dragLeavetHandler(e)}
-              onDragOver={(e)=> dragOverHandler(e)}
-              onDrop={(e)=> dropHandler(e, data)}
-            />)
-        }
-      </tbody>
-    </table>
-  );
+  if(data.length===0){
+    return(
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Color</th>
+            <th>Delete Button</th>
+            <th>Change position</th>
+          </tr>
+        </thead>
+      </table>
+    )
+  } else{
+    return(
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name<button className="table__sort-button" onClick={handleClickName}>sort</button></th>
+            <th>Type<button className="table__sort-button" onClick={handleClickType}>sort</button></th>
+            <th>Color<button className="table__sort-button" onClick={handleClickColor}>sort</button></th>
+            <th>Delete Button</th>
+            <th>Change position</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            dataForDisplay.map(data=>
+              <NewRow 
+                key={`${data.id}`} 
+                {...data} 
+                draggable={true}
+                onDragStart={(e)=> dragStartHandler(e, data)}
+                onDragLeave={(e)=> dragLeavetHandler(e)}
+                onDragOver={(e)=> dragOverHandler(e)}
+                onDrop={(e)=> dropHandler(e, data)}
+              />)
+          }
+        </tbody>
+      </table>
+    );
+  }
+  
 };
 
 export default Table;
